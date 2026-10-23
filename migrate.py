@@ -262,11 +262,13 @@ def verify(bundle):
     return manifest
 
 
-def export_setup(home, output, repo=False):
+def export_setup(home, output, repo=False, force=False):
     """Snapshot per setup.
 
     `repo=True` additionally generates a git-ready directory: no archive,
     a `.gitignore`, and an `install.sh` that verifies and restores.
+    `--force` allows refreshing an existing generated repo in place while
+    preserving its `.git` history, but only when it looks like our output.
     """
     prerequisites()
     home = Path(home).expanduser().resolve()
@@ -278,7 +280,13 @@ def export_setup(home, output, repo=False):
     if not repo:
         conflicts.append(archive)
     if any(path.exists() for path in conflicts):
-        raise ValueError("Output or archive already exists; use a new directory: " + str(output))
+        if force and repo and output.is_dir():
+            markers = [output / "migrate.py", output / "manifest.json", output / "payload"]
+            if not all(marker.exists() for marker in markers):
+                raise ValueError("Existing directory is not a generated repo; refusing --force: " + str(output))
+        else:
+            raise ValueError("Output or archive already exists; use --force to refresh a generated repo, "
+                             "or a new directory: " + str(output))
     for root in ROOTS:
         source = home / root
         if output == source or source in output.parents:
@@ -425,7 +433,24 @@ def export_setup(home, output, repo=False):
             install.chmod(0o700)
         write_checksums(stage)
         verify(stage)
-        shutil.move(str(stage), str(output))
+        if repo and force and (output / "manifest.json").exists():
+            kept_git = Path(tmp) / "kept-git"
+            old_repo = Path(tmp) / "old-repo"
+            if (output / ".git").exists():
+                shutil.move(str(output / ".git"), str(kept_git))
+            shutil.move(str(output), str(old_repo))
+            try:
+                shutil.move(str(stage), str(output))
+                if kept_git.exists():
+                    shutil.move(str(kept_git), str(output / ".git"))
+            except BaseException:
+                if output.exists():
+                    shutil.rmtree(output)
+                shutil.move(str(old_repo), str(output))
+                raise
+            shutil.rmtree(old_repo)
+        else:
+            shutil.move(str(stage), str(output))
     output.chmod(0o700)
     if repo:
         print("Repository:", output)
@@ -586,6 +611,8 @@ def main(argv=None):
     exp.add_argument("--output", type=Path, required=True)
     exp.add_argument("--repo", action="store_true",
                      help="Generate a git-ready directory instead of an archive")
+    exp.add_argument("--force", action="store_true",
+                     help="Refresh an existing generated repo in place, preserving its .git history")
     for name in ["verify", "restore"]:
         p = sub.add_parser(name)
         p.add_argument("--bundle", type=Path, default=Path(__file__).resolve().parent)
@@ -600,7 +627,7 @@ def main(argv=None):
     p.add_argument("--home", type=Path, default=Path.home())
     args = parser.parse_args(argv)
     if args.command == "export":
-        export_setup(args.home, args.output, args.repo)
+        export_setup(args.home, args.output, args.repo, args.force)
     elif args.command == "verify":
         verify(args.bundle)
     elif args.command == "restore":
