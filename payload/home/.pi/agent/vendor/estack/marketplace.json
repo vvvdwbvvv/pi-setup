@@ -1,0 +1,29 @@
+{
+  "name": "estack-local",
+  "owner": {
+    "name": "vvvdwbvvv"
+  },
+  "metadata": {
+    "description": "Local estack marketplace for omp and human catalogs",
+    "version": "0.2.0"
+  },
+  "note": "Codex reads .agents/plugins/marketplace.json. This file mirrors it for omp plugin marketplace and docs.",
+  "plugins": [
+    {
+      "name": "estack",
+      "description": "v-agent and go entry, thermos review, and bundled poteto-mode.",
+      "version": "0.2.0",
+      "source": ".",
+      "keywords": [
+        "estack",
+        "v-agent",
+        "go",
+        "poteto",
+        "poteto-mode",
+        "pstack",
+        "thermos",
+        "code-review"
+      ]
+    }
+  ]
+}

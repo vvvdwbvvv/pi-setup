@@ -1,0 +1,12 @@
+{
+  "name": "pi-extensions",
+  "private": true,
+  "dependencies": {
+    "@plannotator/pi-extension": "^0.28.25",
+    "@sting8k/pi-droid-styling": "^3.0.0",
+    "context-mode": "^1.0.169",
+    "pi-lens": "^4.4.4",
+    "pi-simplify": "^0.2.3",
+    "pi-web-access": "^0.44.0"
+  }
+}

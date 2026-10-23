@@ -1,0 +1,28 @@
+{
+  "name": "estack-local",
+  "owner": {
+    "name": "vvvdwbvvv"
+  },
+  "metadata": {
+    "description": "Local estack plugin marketplace for Copilot / Agent Plugins clients",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "estack",
+      "description": "v-agent and go entry, thermos review, and bundled poteto-mode.",
+      "version": "0.2.0",
+      "source": ".",
+      "keywords": [
+        "estack",
+        "v-agent",
+        "go",
+        "poteto",
+        "poteto-mode",
+        "pstack",
+        "thermos",
+        "code-review"
+      ]
+    }
+  ]
+}

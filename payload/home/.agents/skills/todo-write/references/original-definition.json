@@ -1,0 +1,50 @@
+{
+  "tool": "TodoWrite",
+  "description": "Use this tool to create and manage a structured task list for your current coding session.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "todos": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier for the TODO item"
+            },
+            "content": {
+              "type": "string",
+              "description": "The description/content of the TODO item"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "in_progress",
+                "completed",
+                "cancelled"
+              ],
+              "description": "The current status of the TODO item"
+            }
+          },
+          "required": [
+            "id",
+            "content",
+            "status"
+          ]
+        },
+        "minItems": 2,
+        "description": "Array of TODO items to update or create"
+      },
+      "merge": {
+        "type": "boolean",
+        "description": "Whether to merge the todos with the existing todos. If true, the todos will be merged into the existing todos based on the id field. You can leave unchanged properties undefined. If false, the new todos will replace the existing todos."
+      }
+    },
+    "required": [
+      "todos",
+      "merge"
+    ]
+  }
+}

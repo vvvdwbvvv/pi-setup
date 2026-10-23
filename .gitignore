@@ -1,0 +1,7 @@
+# Ignore generated artifacts and machine-local state.
+*.tar.gz
+*.log
+restore-check/
+bundle/
+__pycache__/
+.DS_Store

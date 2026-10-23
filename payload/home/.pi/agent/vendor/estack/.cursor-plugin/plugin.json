@@ -1,0 +1,30 @@
+{
+  "name": "estack",
+  "displayName": "estack",
+  "version": "0.2.0",
+  "description": "Personal agent stack: v-agent entry, portable tool skills, curated review and PR workflows, and bundled poteto-mode.",
+  "author": {
+    "name": "vvvdwbvvv"
+  },
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "estack",
+    "v-agent",
+    "go",
+    "poteto",
+    "pstack",
+    "thermos",
+    "code-review"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "workflow",
+    "review",
+    "pr",
+    "quality"
+  ],
+  "agents": "./agents",
+  "skills": "./skills",
+  "rules": "./rules"
+}

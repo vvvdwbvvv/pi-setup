@@ -1,0 +1,38 @@
+{
+  "name": "estack-local",
+  "metadata": {
+    "description": "Local estack marketplace for Codex and Agent Plugins clients",
+    "version": "0.2.0"
+  },
+  "interface": {
+    "displayName": "estack",
+    "shortDescription": "v-agent gate, thermos review, and bundled poteto-mode",
+    "longDescription": "Skills for go, poteto-mode playbooks, thermos review, and PR workflows. One install includes poteto-mode; do not add a separate pstack plugin."
+  },
+  "plugins": [
+    {
+      "name": "estack",
+      "description": "v-agent and go entry, thermos review, and bundled poteto-mode.",
+      "version": "0.2.0",
+      "keywords": [
+        "estack",
+        "v-agent",
+        "go",
+        "poteto",
+        "poteto-mode",
+        "pstack",
+        "thermos",
+        "code-review"
+      ],
+      "source": {
+        "source": "local",
+        "path": "."
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

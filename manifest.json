@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "createdAt": "2026-10-23T16:02:33.210648+00:00",
+  "piVersion": "1.3.0",
+  "nodeVersion": "v24.19.0",
+  "packages": [
+    {
+      "source": "npm:pi-web-access",
+      "kind": "npm",
+      "version": "0.44.0",
+      "restoredSource": "npm:pi-web-access@0.44.0"
+    },
+    {
+      "source": "npm:pi-lens",
+      "kind": "npm",
+      "version": "4.4.4",
+      "restoredSource": "npm:pi-lens@4.4.4"
+    },
+    {
+      "source": "npm:context-mode",
+      "kind": "npm",
+      "version": "1.0.169",
+      "restoredSource": "npm:context-mode@1.0.169"
+    },
+    {
+      "source": "npm:pi-simplify",
+      "kind": "npm",
+      "version": "0.2.3",
+      "restoredSource": "npm:pi-simplify@0.2.3"
+    },
+    {
+      "source": "npm:@plannotator/pi-extension",
+      "kind": "npm",
+      "version": "0.28.25",
+      "restoredSource": "npm:@plannotator/pi-extension@0.28.25"
+    },
+    {
+      "source": "../../Personal/pi-grok-ask-user-question",
+      "kind": "snapshot",
+      "restoredSource": "./vendor/pi-grok-ask-user-question"
+    },
+    {
+      "source": "npm:@sting8k/pi-droid-styling",
+      "kind": "npm",
+      "version": "3.0.0",
+      "restoredSource": "npm:@sting8k/pi-droid-styling@3.0.0"
+    },
+    {
+      "source": "git:github.com/sting8k/pi-themes",
+      "commit": "9df900d148a8c910992c205c7e924485f680309e",
+      "kind": "snapshot",
+      "restoredSource": "./vendor/pi-themes"
+    },
+    {
+      "source": "../../personal/cursor-tool-capture/cursor-essential",
+      "kind": "snapshot",
+      "restoredSource": "./vendor/cursor-tool-capture/cursor-essential"
+    },
+    {
+      "source": "../../Personal/Skill Factory/estack",
+      "kind": "snapshot",
+      "restoredSource": "./vendor/estack"
+    }
+  ],
+  "redactions": [],
+  "compatibilityPatches": [
+    "extensions/inception/index.ts",
+    "extensions/subagents/runner.ts"
+  ],
+  "excluded": [
+    "credentials",
+    "sessions",
+    "trust decisions",
+    "model catalogs",
+    "node_modules",
+    "native binaries",
+    "git history",
+    "logs",
+    "context-mode memory",
+    "pi-lens caches"
+  ],
+  "environmentNames": [
+    "INCEPTION_API_KEY"
+  ],
+  "runtimeBuilds": [
+    ".pi/agent/vendor/cursor-tool-capture/agent-essential-runtime"
+  ]
+}

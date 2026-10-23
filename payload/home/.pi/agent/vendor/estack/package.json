@@ -1,0 +1,25 @@
+{
+  "name": "estack",
+  "version": "0.2.0",
+  "description": "v-agent and go entry, thermos review, and bundled poteto-mode (no separate pstack plugin).",
+  "license": "MIT",
+  "author": "vvvdwbvvv",
+  "keywords": [
+    "estack",
+    "v-agent",
+    "go",
+    "poteto",
+    "poteto-mode",
+    "pstack",
+    "thermos",
+    "code-review"
+  ],
+  "pi": {
+    "skills": ["./skills"],
+    "agents": ["./agents"]
+  },
+  "omp": {
+    "skills": ["./skills"],
+    "agents": ["./agents"]
+  }
+}

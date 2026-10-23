@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "estack",
+  "displayName": "estack",
+  "version": "0.2.0",
+  "description": "Personal agent stack: v-agent entry, portable tool skills, curated review and PR workflows, and bundled poteto-mode.",
+  "author": {
+    "name": "vvvdwbvvv"
+  },
+  "license": "MIT",
+  "keywords": [
+    "estack",
+    "v-agent",
+    "go",
+    "poteto",
+    "pstack",
+    "thermos",
+    "code-review"
+  ],
+  "skills": "./skills",
+  "agents": "./agents"
+}

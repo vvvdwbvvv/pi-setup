@@ -1,0 +1,24 @@
+{
+  "tool": "WebFetch",
+  "description": "Fetch content from a specified URL and return its contents in a readable markdown format. Use this tool when you need to retrieve and analyze web content.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "The URL to fetch. The content will be converted to a readable markdown format."
+      },
+      "requestSmartModeApproval": {
+        "type": "boolean",
+        "description": "Set to true when immediately retrying the exact same fetch after Auto-review blocks it and you decide the user should approve it through the native approval card."
+      },
+      "smartModeBlockReason": {
+        "type": "string",
+        "description": "Provide the exact block reason returned by Auto-review in the prior rejection. Required when requestSmartModeApproval is true so the approval card shows the original classifier reason without re-running the classifier."
+      }
+    },
+    "required": [
+      "url"
+    ]
+  }
+}

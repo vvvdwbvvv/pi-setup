@@ -1,0 +1,37 @@
+{
+  "name": "estack",
+  "version": "0.2.0",
+  "description": "v-agent and go entry, thermos review, and bundled poteto-mode.",
+  "author": {
+    "name": "vvvdwbvvv"
+  },
+  "license": "MIT",
+  "keywords": [
+    "estack",
+    "v-agent",
+    "go",
+    "poteto",
+    "poteto-mode",
+    "pstack",
+    "thermos",
+    "code-review"
+  ],
+  "skills": "./skills",
+  "agents": "./agents",
+  "interface": {
+    "displayName": "estack",
+    "shortDescription": "v-agent gate, thermos review, and bundled poteto-mode",
+    "longDescription": "Skills for go, poteto-mode playbooks, thermos, and PR review. Use /go for the v-agent gate. You do not install pstack separately.",
+    "developerName": "vvvdwbvvv",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "/go",
+      "/poteto-mode",
+      "Run thermos on my branch diff"
+    ]
+  }
+}

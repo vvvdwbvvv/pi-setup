@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "agent-essential": {
+      "command": "node",
+      "args": [
+        "@@PI_MIGRATION_HOME@@/.pi/agent/vendor/cursor-tool-capture/agent-essential-runtime/dist/src/surfaces/cli/main.js",
+        "mcp"
+      ],
+      "env": {
+        "AGENT_ESSENTIAL_WORKSPACE_ROOT": "@@PI_MIGRATION_HOME@@",
+        "AGENT_ESSENTIAL_STATE_DIR": "@@PI_MIGRATION_HOME@@/.cache/agent-essential-state"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cursor-essential",
+  "version": "0.1.0",
+  "description": "Preserved descriptions and input schemas for 13 discovered Cursor tools, packaged as portable Agent Skills. Standalone execution via sibling agent-essential-runtime (MCP/CLI).",
+  "author": {
+    "name": "vvvdwbvvv"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cursor Essential",
+        "shortDescription": "13 captured tool guides",
+        "longDescription": "Thirteen portable Agent Skills preserve discovered Cursor tool descriptions and input schemas. Standalone execution uses agent-essential-runtime (npm/MCP); see docs/runtime.md. In Cursor, native cursor tools remain preferred when available.",
+        "developerName": "vvvdwbvvv",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Use the relevant cursor-essential Skill; execute via agent-essential-runtime MCP/CLI or native cursor tools when in Cursor."
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "estack",
+  "version": "0.2.0",
+  "description": "v-agent and go entry, thermos review, and bundled poteto-mode.",
+  "author": {
+    "name": "vvvdwbvvv"
+  },
+  "license": "MIT",
+  "keywords": [
+    "estack",
+    "v-agent",
+    "go",
+    "poteto",
+    "poteto-mode",
+    "pstack",
+    "thermos",
+    "code-review"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "estack",
+        "shortDescription": "v-agent gate, thermos review, and bundled poteto-mode",
+        "longDescription": "Skills for go, poteto-mode playbooks, thermos, and PR review. One install includes poteto-mode; do not add a separate pstack plugin.",
+        "developerName": "vvvdwbvvv",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "/go",
+          "Run thermos on my branch diff",
+          "Make this PR easy to review"
+        ]
+      }
+    }
+  }
+}

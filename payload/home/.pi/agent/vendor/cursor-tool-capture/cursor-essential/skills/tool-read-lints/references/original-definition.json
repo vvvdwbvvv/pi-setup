@@ -1,0 +1,16 @@
+{
+  "tool": "ReadLints",
+  "description": "Read and display linter errors from the current workspace. You can provide paths to specific files or directories, or omit the argument to get diagnostics for all files.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "paths": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Optional. An array of paths to files or directories to read linter errors for. You can use either relative paths in the workspace or absolute paths. If provided, returns diagnostics for the specified files/directories only. If not provided, returns diagnostics for all files in the workspace."
+      }
+    }
+  }
+}
